@@ -14,8 +14,6 @@ const VisibilitySelector = (props: Props) => {
   const t = useTranslate();
 
   const visibilityOptions = [
-    { value: Visibility.PRIVATE, label: t("memo.visibility.private") },
-    { value: Visibility.PROTECTED, label: t("memo.visibility.protected") },
     { value: Visibility.PUBLIC, label: t("memo.visibility.public") },
   ];
 

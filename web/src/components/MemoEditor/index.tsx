@@ -98,7 +98,7 @@ const MemoEditor = observer((props: Props) => {
   }, [autoFocus]);
 
   useAsyncEffect(async () => {
-    let visibility = convertVisibilityFromString(userGeneralSetting?.memoVisibility || "PRIVATE");
+    let visibility = convertVisibilityFromString("PUBLIC");
     if (workspaceMemoRelatedSetting.disallowPublicVisibility && visibility === Visibility.PUBLIC) {
       visibility = Visibility.PROTECTED;
     }

@@ -23,10 +23,7 @@ const Home = observer(() => {
   const selectedShortcut = userStore.state.shortcuts.find((shortcut) => getShortcutId(shortcut.name) === memoFilterStore.shortcut);
 
   const memoFilter = useMemo(() => {
-    const conditions = [`creator_id == ${extractUserIdFromName(user.name)}`];
-    if (selectedShortcut?.filter) {
-      conditions.push(selectedShortcut.filter);
-    }
+    const conditions = [];
     for (const filter of memoFilterStore.filters) {
       if (filter.factor === "contentSearch") {
         conditions.push(`content.contains("${filter.value}")`);
